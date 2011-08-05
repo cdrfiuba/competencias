@@ -13,9 +13,9 @@ $HANDSEED
   5
 FFFF
   9
-$DIMADEC
- 70
-2
+$DIMASZ
+ 40
+2.5
   9
 $GRIDUNIT
  10
@@ -23,69 +23,69 @@ $GRIDUNIT
  20
 0.0
   9
-$DIMASZ
- 40
-2.5
+$DIMADEC
+ 70
+2
   9
 $DIMGAP
  40
 0.625
   9
-$LUNITS
+$SPLINESEGS
  70
-2
+8
   9
 $AUPREC
  70
 2
   9
-$SPLINESEGS
+$LUNITS
  70
-8
-  9
-$INSUNITS
- 70
-4
+2
   9
 $DIMEXO
  40
 0.625
   9
+$INSUNITS
+ 70
+4
+  9
 $DIMLUNIT
  70
 2
-  9
-$GRIDMODE
- 70
-1
   9
 $DIMTXT
  40
 2.5
   9
+$GRIDMODE
+ 70
+1
+  9
 $LUPREC
  70
 4
+  9
+$PSVPSCALE
+ 40
+1.0
   9
 $DIMSTYLE
   2
 Standard
   9
-$PSVPSCALE
- 40
-1.0
+$PLIMMAX
+ 10
+1189.0
+ 20
+841.0
   9
 $PLIMMIN
  10
 0.0
  20
 0.0
-  9
-$PLIMMAX
- 10
-215.9000000000000057
- 20
-355.6000000000000227
   9
 $DIMEXE
  40
@@ -2131,7 +2131,7 @@ AcDbDimension
  71
 5
  72
-0
+1
  41
 1.0
  42
@@ -2443,7 +2443,7 @@ AcDbDimension
  71
 5
  72
-0
+1
  41
 1.0
  42
@@ -2691,7 +2691,7 @@ ByLayer
  71
 5
  72
-0
+2
   1
 100
   7
@@ -2699,7 +2699,7 @@ standard
  50
 280.9722402378116044
  73
-1
+0
  44
 1.0
   0
@@ -2759,7 +2759,7 @@ ByLayer
  71
 5
  72
-0
+2
   1
 100
   7
@@ -2767,7 +2767,7 @@ standard
  50
 100.9722402378116328
  73
-1
+0
  44
 1.0
   0
@@ -2823,7 +2823,7 @@ AcDbDimension
  11
 -886.5749999999999318
  21
-195.9399999999999693
+195.9399999999999977
  31
 0.0
  70
@@ -2831,7 +2831,7 @@ AcDbDimension
  71
 5
  72
-1
+0
  41
 1.0
  42
@@ -2891,7 +2891,7 @@ AcDbDimension
  71
 5
  72
-1
+0
  41
 1.0
  42
@@ -2951,7 +2951,7 @@ AcDbDimension
  71
 5
  72
-1
+0
  41
 1.0
  42
@@ -3011,7 +3011,7 @@ AcDbDimension
  71
 5
  72
-1
+0
  41
 1.0
  42
@@ -3071,7 +3071,7 @@ AcDbDimension
  71
 5
  72
-1
+0
  41
 1.0
  42
@@ -3359,7 +3359,7 @@ AcDbDimension
  71
 5
  72
-1
+0
  41
 1.0
  42
