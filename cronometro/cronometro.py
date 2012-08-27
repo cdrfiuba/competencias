@@ -55,6 +55,7 @@ ck = pygame.time.Clock()
 background = pygame.Surface(screen.get_size())
 background = background.convert()
 
+
 def load_image(name):
     fullname = os.path.join('.', name)
     image = pygame.image.load(fullname)
@@ -121,9 +122,11 @@ ESPERANDO, CONTANDO, TERMINADO = range(3)
 
 class World(object):
     def __init__(self):
+        self.ayuda = "UP, DOWN: autos - d: descartar - esc: terminar competencia - r: reset | p: iniciar - s: parar - q = salir"
         self.estado = ESPERANDO
         self.font = pygame.font.SysFont("Monospace", 120, bold=True)
         self.font_chica = pygame.font.SysFont("Monospace", 70, bold=True)
+        self.font_ayuda = pygame.font.SysFont("Monospace", 25, bold=False)
     def render(self):
         if self.estado == ESPERANDO:
             background.fill((255,255,255))
@@ -137,6 +140,12 @@ class World(object):
         background.blit(banner, (102,0))
         nombre_carrera = self.font.render(self.nombre_carrera, 1, (10, 10, 10))
         background.blit(nombre_carrera, nombre_carrera.get_rect(centerx=width/2, centery=int(height*5.0/6.0)))
+        # Imprimo el texto de ayuda
+        ayuda = self.font_ayuda.render(self.ayuda[0:self.ayuda.find('|')], 1, (100,100,100))
+        background.blit(ayuda, ayuda.get_rect(centerx=width/2, centery=int(height*5.7/6.0)))
+        ayuda = self.font_ayuda.render(self.ayuda[self.ayuda.find('|')+1:], 1, (100,100,100))
+        background.blit(ayuda, ayuda.get_rect(centerx=width/2, centery=int(height*5.9/6.0)))
+        
         if self.carreras:
             self.carreras.sort()
             mejor_carrera = self.carreras[0]
@@ -241,7 +250,7 @@ while 1:
             elif event.key == pygame.K_s:
                 cronometro.stop()
                 world.estado = TERMINADO
-                carreras.append(Carrera(cronometro, elapsed, world.nombre_carrera))
+                carreras.append(Carrera(cronometro.elapsed, world.nombre_carrera))
                 carreras.sort()
             elif event.key == pygame.K_UP:
                 if world.estado == ESPERANDO:
