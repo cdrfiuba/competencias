@@ -266,14 +266,17 @@ while 1:
                      world.render()
             elif event.key ==  pygame.K_r:
                 cronometro.reset()
+                serial_io.ser.write('D')
                 world.estado = ESPERANDO
                 serial_io.ser.read(100)
                 world.render()
             elif event.key == pygame.K_p:
                 cronometro.start()
+                serial_io.ser.write('D')
                 world.estado = CONTANDO
             elif event.key == pygame.K_d:
                 cronometro.stop()
+                serial_io.ser.write('d')
                 world.estado = TERMINADO
 
     # Vemos si paso algo en el mbed
@@ -285,6 +288,7 @@ while 1:
                 world.estado = CONTANDO
             elif world.estado == CONTANDO:
                 cronometro.stop()
+                serial_io.ser.write('d')
                 world.estado = TERMINADO
                 carreras.append(Carrera(cronometro.elapsed, world.nombre_carrera))
 
