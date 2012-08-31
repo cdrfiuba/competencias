@@ -43,7 +43,7 @@ import cars
 print cars.cars
 
 # Se configura el tamaño de la ventana.
-size = width, height = 1024, 768
+size = width, height = 800, 600
 
 
 class Cronometro(object):
@@ -135,8 +135,8 @@ class World(object):
         self.back = back
         self.ayuda = "1,2: autos - q,w: aumentan puntos - a,s: bajan puntos - z: aumenta asalto - x: baja asalto | p: comienza, o: termina, l: reiniciar cronometro, BACKSPACE = reset total"
         self.estado = IDLE
-        self.font = pygame.font.SysFont("Monospace", 120, bold=True)
-        self.font_chica = pygame.font.SysFont("Monospace", 25, bold=False)
+        self.font = pygame.font.SysFont("Monospace", 85, bold=True)
+        self.font_chica = pygame.font.SysFont("Monospace", 14,bold=False)
         self.auto1 = str(cars.cars[0])
         self.auto1_puntaje = 0
         self.auto2 = str(cars.cars[0])

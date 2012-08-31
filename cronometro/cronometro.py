@@ -126,7 +126,7 @@ class World(object):
         self.estado = ESPERANDO
         self.font = pygame.font.SysFont("Monospace", 120, bold=True)
         self.font_chica = pygame.font.SysFont("Monospace", 70, bold=True)
-        self.font_ayuda = pygame.font.SysFont("Monospace", 25, bold=False)
+        self.font_ayuda = pygame.font.SysFont("Monospace", 18, bold=False)
     def render(self):
         if self.estado == ESPERANDO:
             background.fill((255,255,255))
