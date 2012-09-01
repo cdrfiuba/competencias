@@ -264,13 +264,13 @@ class Game():
                     if event.button == 1:
                         x = event.pos[0]
                         y = event.pos[1]
-                        if x > 40 and x < 470 and y > 260 and y < 530:
+                        if x > (width/8) and x < ((3*width)/8) and y > ((5*height)/12) and y < ((2*height)/3):
                             world.auto1_puntaje += 1
-                        elif x > 560 and x < 1000 and y > 260 and y < 530:
+                        elif x > ((5*width)/8) and x < ((7*width)/8) and y > ((5*height)/12) and y < ((2*height)/3):
                             world.auto2_puntaje += 1
-                        elif x > 320 and x < 710 and y > 10 and y < 240:
+                        elif x > (width/3) and x < ((2*width)/3) and y > 0 and y < (height/3):
                             world.asalto_num += 1
-                        elif x > 315 and x < 690 and y > 590 and y < 690:
+                        elif x > ((3*width)/16) and x < ((13*width)/16) and y > ((3*height)/4) and y < ((107*height)/120):
                             if world.estado == COMPITIENDO:
                                 cronometro.stop()
                                 world.estado = TERMINADO
