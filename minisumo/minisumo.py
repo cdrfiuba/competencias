@@ -163,7 +163,7 @@ class World(object):
             self.back.fill((0, 255, 250)) #No se que es
             self.crono.update()
 
-        banner, banner_rect = self.load_image("logo-club-banner.png")
+        banner, banner_rect = self.load_image("logo-club-banner_596x600.png")
         self.back.blit(banner, (102,0))
         asalto = self.font.render("Asalto", 1, (200, 10, 10))
         asalto_num = self.font.render(str(self.asalto_num), 1, (200, 10, 10))
