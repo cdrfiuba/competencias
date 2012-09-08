@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Cronometro</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QListView" name="listView">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="resizeMode">
+       <enum>QListView::Fixed</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>640</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="toolMenu">
+    <property name="title">
+     <string>Herramientas</string>
+    </property>
+    <addaction name="actionRace_Configuration"/>
+   </widget>
+   <widget class="QMenu" name="helpMenu">
+    <property name="title">
+     <string>Ayuda</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="fileMenu">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="actionNew_Race"/>
+    <addaction name="actionOpen_Race"/>
+    <addaction name="actionSave_Race"/>
+    <addaction name="actionSave_As"/>
+    <addaction name="separator"/>
+    <addaction name="actionClose"/>
+   </widget>
+   <addaction name="fileMenu"/>
+   <addaction name="toolMenu"/>
+   <addaction name="helpMenu"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew_Race"/>
+   <addaction name="actionOpen_Race"/>
+   <addaction name="actionSave_Race"/>
+   <addaction name="separator"/>
+   <addaction name="actionRace_Configuration"/>
+   <addaction name="separator"/>
+   <addaction name="actionVentana_Cronometro"/>
+   <addaction name="actionCronometro_Fullscreen"/>
+  </widget>
+  <action name="actionRace_Configuration">
+   <property name="icon">
+    <iconset resource="toolbar.qrc">
+     <normaloff>:/icons/icons/clear/128x128/actions/search.png</normaloff>:/icons/icons/clear/128x128/actions/search.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configurar Carrera</string>
+   </property>
+  </action>
+  <action name="actionOpen_Race">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="toolbar.qrc">
+     <normaloff>:/icons/icons/clear/128x128/actions/stock_paste.png</normaloff>:/icons/icons/clear/128x128/actions/stock_paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>Abrir Carrera</string>
+   </property>
+  </action>
+  <action name="actionSave_Race">
+   <property name="icon">
+    <iconset resource="toolbar.qrc">
+     <normaloff>:/icons/icons/clear/128x128/actions/stock_save.png</normaloff>:/icons/icons/clear/128x128/actions/stock_save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Guardar</string>
+   </property>
+  </action>
+  <action name="actionSave_As">
+   <property name="icon">
+    <iconset resource="toolbar.qrc">
+     <normaloff>:/icons/icons/clear/128x128/actions/stock_save-as.png</normaloff>:/icons/icons/clear/128x128/actions/stock_save-as.png</iconset>
+   </property>
+   <property name="text">
+    <string>Guardar Como...</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="icon">
+    <iconset theme="exit">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Cerrar</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset theme="gtk-find">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Sobre</string>
+   </property>
+  </action>
+  <action name="actionNew_Race">
+   <property name="icon">
+    <iconset resource="toolbar.qrc">
+     <normaloff>:/icons/icons/clear/128x128/actions/stock_new-text.png</normaloff>:/icons/icons/clear/128x128/actions/stock_new-text.png</iconset>
+   </property>
+   <property name="text">
+    <string>Nueva Carrera</string>
+   </property>
+  </action>
+  <action name="actionVentana_Cronometro">
+   <property name="icon">
+    <iconset>
+     <activeon>:/icons/icons/clear/128x128/actions/window-new.png</activeon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Ventana Cronometro</string>
+   </property>
+  </action>
+  <action name="actionCronometro_Fullscreen">
+   <property name="icon">
+    <iconset>
+     <normalon>:/icons/icons/clear/128x128/actions/stock_fullscreen.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Cronometro Fullscreen</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="toolbar.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionClose</sender>
+   <signal>activated()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>202</x>
+     <y>162</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
