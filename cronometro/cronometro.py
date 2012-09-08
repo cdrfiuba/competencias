@@ -40,6 +40,7 @@ import cars
 
 print cars.cars
 
+BARRERA_CONECTADA = True;
 SERIAL_PORT = "/dev/ttyACM0" # "/dev/ttyACM0" o "COM3"
 
 pygame.init()
@@ -217,11 +218,11 @@ leer_carreras(carreras, archivo)
 banner, banner_rect = load_image("logo-club-banner.png")
 world = World()
 cronometro = Cronometro()
-serial_io = SerialIO(port=SERIAL_PORT, timeout=0)
+if (BARRERA_CONECTADA): serial_io = SerialIO(port=SERIAL_PORT, timeout=0)
 
 import time,subprocess
 time.sleep(1)
-serial_io.ser.read(1000)
+if (BARRERA_CONECTADA): serial_io.ser.read(1000)
 
 auto = 0
 world.nombre_carrera = str(cars.cars[auto])
@@ -280,17 +281,18 @@ while 1:
                 world.estado = TERMINADO
 
     # Vemos si paso algo en el mbed
-    rcv = serial_io.try_read_byte()
-    if rcv:
-        if rcv == "L": # Partida
-            if world.estado == ESPERANDO:
-                cronometro.start()
-                world.estado = CONTANDO
-            elif world.estado == CONTANDO:
-                cronometro.stop()
-                serial_io.ser.write('d')
-                world.estado = TERMINADO
-                carreras.append(Carrera(cronometro.elapsed, world.nombre_carrera))
+    if (BARRERA_CONECTADA):
+		rcv = serial_io.try_read_byte()
+		if rcv:
+			if rcv == "L": # Partida
+				if world.estado == ESPERANDO:
+					cronometro.start()
+					world.estado = CONTANDO
+				elif world.estado == CONTANDO:
+					cronometro.stop()
+					serial_io.ser.write('d')
+					world.estado = TERMINADO
+					carreras.append(Carrera(cronometro.elapsed, world.nombre_carrera))
 
     world.render()
     screen.blit(background, (0, 0))
