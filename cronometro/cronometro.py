@@ -40,7 +40,7 @@ import cars
 
 print cars.cars
 
-BARRERA_CONECTADA = True;
+BARRERA_CONECTADA = False;
 SERIAL_PORT = "/dev/ttyACM0" # "/dev/ttyACM0" o "COM3"
 
 pygame.init()
@@ -128,6 +128,9 @@ class World(object):
         self.font = pygame.font.SysFont("Monospace", 120, bold=True)
         self.font_chica = pygame.font.SysFont("Monospace", 70, bold=True)
         self.font_ayuda = pygame.font.SysFont("Monospace", 18, bold=False)
+        
+        self.tamanio_fuentes = {}
+        
     def render(self):
         if self.estado == ESPERANDO:
             background.fill((255,255,255))
@@ -139,7 +142,7 @@ class World(object):
             background.fill((0, 255, 0))
             cronometro.update()
         background.blit(banner, (102,0))
-        nombre_carrera = self.font.render(self.nombre_carrera, 1, (10, 10, 10))
+        nombre_carrera = self.get_font_size(self.nombre_carrera, 800).render(self.nombre_carrera, 1, (10, 10, 10))
         background.blit(nombre_carrera, nombre_carrera.get_rect(centerx=width/2, centery=int(height*5.0/6.0)))
         # Imprimo el texto de ayuda
         ayuda = self.font_ayuda.render(self.ayuda[0:self.ayuda.find('|')], 1, (100,100,100))
@@ -162,7 +165,23 @@ class World(object):
 	    s = "%s" % (clockformat(mejor_carrera.tiempo))
             highscore = self.font_chica.render(s, 1, (230, 30, 30))
             background.blit(highscore, highscore.get_rect(centerx=width /2.0, centery=int(height*1.0/3.0)))
+	
+    def get_font_size(self, texto, maximo_tamanio):
+        if (texto in self.tamanio_fuentes): return self.tamanio_fuentes[texto]
+		
+        tamanio = 120
+		
+        new_font = pygame.font.SysFont("Monospace", tamanio, bold=True)
+        surface = new_font.render(texto, 1, (10, 10, 10))
+        while (surface.get_width() > maximo_tamanio):
+            tamanio = tamanio - 1
+            new_font = pygame.font.SysFont("Monospace", tamanio, bold=True)
+            surface = new_font.render(texto, 1, (10, 10, 10))
+            
+        self.tamanio_fuentes[texto] = new_font
+        return self.tamanio_fuentes[texto]
 
+	
 class Carrera(object):
     def __init__(self, timedelta, nombre):
         self.tiempo = timedelta
@@ -257,13 +276,13 @@ while 1:
                 if world.estado == ESPERANDO:
                      auto = (auto + 1)%len(cars.cars)
                      world.nombre_carrera = str(cars.cars[auto])
-                     serial_io.ser.read(100)
+                     if (BARRERA_CONECTADA): serial_io.ser.read(100)
                      world.render()
             elif event.key == pygame.K_DOWN:
                 if world.estado == ESPERANDO:
                      auto = (auto - 1)%len(cars.cars)
                      world.nombre_carrera = str(cars.cars[auto])
-                     serial_io.ser.read(100)
+                     if (BARRERA_CONECTADA): serial_io.ser.read(100)
                      world.render()
             elif event.key ==  pygame.K_r:
                 cronometro.reset()
