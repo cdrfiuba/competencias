@@ -23,17 +23,17 @@
 \newpage
 \section{Motivación}
 
-Peter Norvig, actual director de investigación para Google y autor del libro de referencia en inteligencia artificial \textit{Artificial Intelligence: A Modern Approach} en una entrevista sobre el futuro de la robótica comentó:
+Peter Norvig\cite{norvig-cv}, actual director de investigación para Google y autor del libro de referencia en inteligencia artificial \textit{Artificial Intelligence: A Modern Approach} en una entrevista sobre el futuro de la robótica comentó \cite{norvig-cita}:
 
 \begin{quote}
-\textit{In terms of robotics we’re probably where the world of PCs were in the early 1970s, where you could buy a PC kit and if you were an enthusiast you could have a lot of fun with that. Within a decade that changed, your grandmother needed word processing or email and we rapidly went from a very small number of hobbyists to pervasive technology throughout society in one or two decades. I expect a similar sort of timescale for robotic technology to take off, \textbf{starting roughly now}.}
+\textit{In terms of robotics we're probably where the world of PCs were in the early 1970s, where you could buy a PC kit and if you were an enthusiast you could have a lot of fun with that. Within a decade that changed, your grandmother needed word processing or email and we rapidly went from a very small number of hobbyists to pervasive technology throughout society in one or two decades. I expect a similar sort of timescale for robotic technology to take off, \textbf{starting roughly now}.}
 \end{quote}
 
-La industria informática, si bien mantiene un gran volumen de ventas y cada vez se expande más en la forma de los dispositivos móviles, al mismo tiempo, ya es una industria madura donde los principales jugadores ya están establecidos y no queda lugar para que una empresa nueva pueda posicionarse como un referente en el área. Mientras que los países asiáticos que históricamente fabricaban componentes electrónicos ahora pueden diseñar super computadora, los países occidentales están buscando el próximo gran mercado, que muchos, además de Norvig, piensan que es la robótica y la inteligencia artificial al servicio de la humanidad.
+La industria informática, si bien mantiene un gran volumen de ventas y cada vez se expande más en la forma de los dispositivos móviles, al mismo tiempo, ya es una industria madura donde los principales jugadores ya están establecidos y no queda lugar para que una empresa nueva pueda posicionarse como un referente en el área. Mientras que los países asiáticos que históricamente fabricaban componentes electrónicos ahora pueden diseñar super computadoras\cite{spectrum-china}, los países occidentales están buscando el próximo gran mercado, que muchos, además de Norvig, piensan que es la robótica y la inteligencia artificial al servicio de la humanidad\cite{ros-spur}\cite{redwood}\cite{wg-irobot}.
 
 Como tal, es de sumo interés para nuestro país no perder esta nueva oportunidad. Ahora es el momento de desarrollar conocimiento, tecnología y aplicaciones de la robótica para así ayudar a desarrollar este nuevo mercado, no sólo en el país sino en el mundo. Ayudar a crear este nuevo mercado significa la oportunidad única de posicionar al país al frente de estas nuevas tecnologías desde el comienzo.
  
-Actualmente existen diversos grupos de investigación de diferentes universidades dedicados a la robótica, sin embargo la mayoría de estos grupos son relativamente recientes y el nivel de producción está muy lejos de otras áreas de investigación como pueden ser las ciencias médicas o la biología molecular.
+Actualmente existen diversos grupos de investigación de diferentes universidades dedicados a la robótica\ref{sec:grupos}, sin embargo la mayoría de estos grupos son relativamente recientes y el nivel de producción está muy lejos de otras áreas de investigación como pueden ser las ciencias médicas o la biología molecular.
 
 Es por esto que se propone organizar un desafío nacional de robótica, cuya dificultad sea superior al estado del arte de la robótica en el país, y así fomentar el crecimiento de los actuales grupos de trabajo, como también la formación de nuevos grupos, especialmente en el ámbito privado, que actualmente permanece alejado de esta temática. Este desafío debe contar con premios acordes con la dificultad del mismo, y se deberían diseñar mecanismos de financiamiento para que los participantes puedan afrontar los costos de desarrollar un robot para esta competencia.
 
@@ -41,17 +41,24 @@ Esta competencia serviría como puntapié de una campaña nacional de apoyo e in
 
 \section{Objetivos}
 
-Acá se podría hacer una lista clara de los objetivos de la carrera.
+Resumiendo lo expuesto en la sección anterior, los objetivos principales de esta competencia son:
+
+\begin{itemize}
+ \item Generar conciencia de la importancia estratégica que tiene el desarrollo de la robótica.
+ \item Atraer a nuevos grupos a participar en robótica.
+ \item Darle mayor relevancia a los grupos actuales.
+ \item Iniciar una propuesta nacional de apoyo a estas tecnologías.
+\end{itemize}
 
 \section{Antecedentes}
 
-Tanto en Europa como en Estados Unidos se organizan competencias avanzadas de robótica. Quizá las más conocidas fueron las propuestas por DARPA [1], conocidas como 2004 y 2005 \textit{Grand Challenge}, 2007 \textit{Urban Challenge}. En estas competencias el objetivo fue crear autos autónomos que sean capaces de completar recorridos en el desierto y en ambientes urbanos sin intervención humana. La misma agencia ya anunció el próximo desafío, que consiste en lograr que robots humanoides puedan resolver situaciones semejantes a las vividas en el accidente de Fukushima, japón.
+Tanto en Europa como en Estados Unidos se organizan competencias avanzadas de robótica. Quizá las más conocidas fueron las propuestas por DARPA\cite{darpa}, conocidas como 2004 y 2005 \textit{Grand Challenge}, 2007 \textit{Urban Challenge}. En estas competencias el objetivo fue crear autos autónomos que sean capaces de completar recorridos en el desierto y en ambientes urbanos sin intervención humana. La misma agencia ya anunció el próximo desafío, que consiste en lograr que robots humanoides puedan resolver situaciones semejantes a las vividas en el accidente de Fukushima, japón.
 
-Los países europeos, por otro lado, tienen sus propias competencias ELROB [2], focalizadas en robots que puedan mapear terrenos desconocidos y usar esa información para encontrar objetos a rescatar o transportar carga. Estas competencias se realizan cada 2 años desde el 2007.
+Los países europeos, por otro lado, tienen sus propias competencias ELROB\cite{elrob}, focalizadas en robots que puedan mapear terrenos desconocidos y usar esa información para encontrar objetos a rescatar o transportar carga. Estas competencias se realizan cada 2 años desde el 2007.
 
-En el 2010, Australia organizó junto con DARPA una competencia llamada \textit{Multi Autonomous Ground-robotic International Challenge} donde un grupo de robots tenía un tiempo determinado para identificar y "neutralizar" un objetivo escondido en un terreno desértico.
+En el 2010, Australia organizó junto con DARPA una competencia llamada \textit{Multi Autonomous Ground-robotic International Challenge}\cite{magic} donde un grupo de robots tenía un tiempo determinado para identificar y ``neutralizar'' un objetivo escondido en un terreno desértico.
 
-Los resultados de estas competencias ya son visibles. En el 2004 ningún participante pudo terminar el recorrido del DARPA Grand Challenge, pero desde entonces esta tecnología maduró considerablemente y ya está siendo aplicada por compañías como Google para hacer autos autónomos comerciales. DARPA también logró que una empresa privada desarrolle un robot humanoide con características excepciones para participar del nuevo desafío.
+Los resultados de estas competencias ya son visibles. En el 2004 ningún participante pudo terminar el recorrido del DARPA Grand Challenge, pero desde entonces esta tecnología maduró considerablemente y ya está siendo aplicada por compañías como Google para hacer autos autónomos comerciales\cite{googlesdc}. DARPA también logró que una empresa privada desarrolle un robot humanoide con características excepciones para participar del nuevo desafío.\cite{petman}
 
 \section{Competencia Propuesta}
 
@@ -62,29 +69,84 @@ Para la primer competencia nacional el desafío tiene que ser más acotado que l
  \item El tiempo destinado para la realización del proyecto no debería superar el año.
 \end{itemize}
 
-El rango de posibles competencias es muy amplio. De muchas formas se puede exigir que el participante pueda ubicarse y hacer mapas del ambiente en que se encuentra, reconozca objetos, planificar trayectorias y finalmente cumplir un objetivo dado. La competencia puede ser de vehículos terrestres, aéreos o hasta acuáticos.
+El rango de posibles competencias es muy amplio. La competencia debería ser tal que cada participante deba ubicarse y hacer mapas del ambiente en que se encuentra, reconozca objetos, planificar trayectorias y finalmente cumplir un objetivo dado. Este objetivo puede ser ubicar algún objeto oculto o simplemente llegar a algún destino cumpliendo todas las leyes de tránsito. Una competencia de estas características se puede realizar de muchas formas, y no sólo con vehículos terrestres, ya que podrían ser aéreos o hasta acuáticos.
 
-De la experiencia propia del Club de Robótica, proponemos imitar el DARPA Grand Challenge, pero reduciendo el tamaño de los autos. En lugar de ser autos con motores a explosión, se propone el uso de vehículos eléctricos más pequeños como pueden ser carros de golf o los rodados a batería comunes para los más chicos. Al cambiar el este aspecto fundamental de la competencia se disminuye enormemente el costo y se disminuyen los riesgos asociados, sin necesariamente simplificar el diseño de los algoritmos de control e inteligencia artificial.
+De la experiencia propia del Club de Robótica\cite{club}, proponemos imitar el DARPA Grand Challenge, pero reduciendo el tamaño de los autos. En lugar de ser autos con motores a explosión, se propone el uso de vehículos eléctricos más pequeños como pueden ser carros de golf o los rodados a batería comunes para los más chicos. Al cambiar el este aspecto fundamental de la competencia se disminuye enormemente el costo y se disminuyen los riesgos asociados, sin necesariamente simplificar el diseño de los algoritmos de control e inteligencia artificial.
 
 En este tipo de competencias los vehículos deben, sin intervención humana recorrer un camino desconocido previamente pasando por lugares estipulados, evitando obstáculos y cumpliendo con objetivos secundarios que se pueden fijar para hacer más interesante el desafío.
 
 \section{Grupos que actualmente trabajan en robótica}
+\label{sec:grupos}
 
 Según sugirió Tom, estaría bueno listar los grupos que sabemos trabajan en estas cosas y podrían participar del desafío.
 
 \begin{itemize}
  \item UBA Exactas
- \item UBA Ingeniería
- \item ITBA
- \item San Juan
+ \item UBA Ingeniería \url{http://laboratorios.fi.uba.ar/laborob/robotica.htm}
+ \item ITBA \url{http://www.itba.edu.ar/laboratorio-de-mecatronica}
+ \item San Juan 
  \item Córdoba
- \item Universidad de Mendoza
+ \item Universidad de Mendoza \url{http://www.um.edu.ar/web/index.php?option=com_content&view=article&id=1579}
 \end{itemize}
 
+\subsection{Clubes de robótica}
+
+La robótica tiene la particularidad de ser una disciplina muy llamativa para gente de diversas edades y orígenes. En particular se presta naturalmente para fomentar el interés en carreras técnicas, tan necesarias para el desarrollo del país. Por este motivo varias universidades organizan estos clubes, siendo el Club de Robótica de la Universidad de Buenos Aires una referencia en el área.
+
+Estos cubles pueden ser involucrados en la organización de la competencia nacional como voluntarios para las tareas que se deben realizar previamente y durante el evento. En particular el Club de Robótica se compromete a participar activamente.
+
+Un problema que afecta a varias de estas organizaciones estudiantiles es la falta de proyección luego de alcanzar el máximo nivel 
 
 
-[1] http://www.darpa.mil/
-[2] http://www.elrob.org/
+\begin{thebibliography}{99}
 
+\bibitem{norvig-cv}
+Peter Norvig, Resume / Vita / C.V. / Curriculum Vitae \\
+\url{http://norvig.com/resume.html}
+
+\bibitem{norvig-cita}
+What happened to Turing's thinking machines? \\
+\url{http://www.zdnet.com/blog/btl/what-happened-to-turings-thinking-machines/80639}
+
+\bibitem{spectrum-china}
+IEEE Spectrum: China's Homegrown Supercomputers \\
+\url{http://spectrum.ieee.org/computing/hardware/chinas-homegrown-supercomputers}
+
+\bibitem{ros-spur}
+Can Willow Garage’s ``Linux for Robots'' Spur Internet-Scale Growth? \\
+\url{http://www.xconomy.com/san-francisco/2012/03/29/can-willow-garages-linux-for-robots-spur-internet-scale-growth/}
+
+\bibitem{redwood}
+Redwood Robotics: New Silicon Valley Startup by Meka Robotics, Willow Garage, and SRI \\
+\url{http://www.hizook.com/blog/2012/05/03/redwood-robotics-new-silicon-valley-startup-meka-robotics-willow-garage-and-sri}
+
+\bibitem{wg-irobot}
+iRobot and Willow Garage Debate Closed vs. Open Source Robotics at Cocktail Party \\
+\url{http://spectrum.ieee.org/automaton/robotics/robotics-software/irobot-willow-garage-debate}
+
+\bibitem{darpa}
+Defense Advanced Research Projects Agency \\
+\url{http://www.darpa.mil/}
+
+\bibitem{elrob}
+The European Robot Trial \\
+\url{http://www.elrob.org/}
+
+\bibitem{magic}
+MAGIC 2010: Super-smart robots wanted for international challenge \\
+\url{http://www.dsto.defence.gov.au/MAGIC2010/}
+
+\bibitem{googlesdc}
+What we're driving at \\
+\url{http://googleblog.blogspot.com.ar/2010/10/what-were-driving-at.html}
+
+\bibitem{petman}
+PETMAN - BigDog gets a Big Brother \\
+\url{http://www.bostondynamics.com/robot_petman.html}
+
+\bibitem{club}
+A. L. Chiesa, E. M. Corbellini, T. A. González y A. Burman , ``A Robotics Club Experience as a complement to Engineering Education'', \textit{IEEE Latinamerican Transactions}, aceptado para publicación.
+
+\end{thebibliography}
 
 \end{document}
