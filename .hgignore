@@ -1,0 +1,47 @@
+# use glob syntax.
+syntax: glob
+
+# Agrego archivos de latex
+*.aux
+*.toc
+*.pdf
+*.backup
+*.tex~
+
+# Archivos de kicad
+*.bck
+*.bak
+*.cache.*
+*-cache.*
+*.dcm
+*.gbl
+*.gtl
+*.gbr
+*.gto
+*.drl
+$savepcb.brd
+*.zip
+*.000
+
+# Archivos de compilacion
+*.bin
+*.hex
+*.o
+*.out
+*.map
+*.pyc
+*.eep
+*.elf
+*.lss
+*.lst
+*.d
+*.sym
+
+# Archivos de simulacion de LTSpice
+*.log
+*.raw
+*.plt
+
+# Archivos de backup de HG
+*.orig
+
