@@ -5,6 +5,17 @@
 \usepackage[pdftex]{graphicx}
 
 \usepackage[pdftex]{hyperref}
+\hypersetup{
+	pdftitle={Propuesta Desafío Nacional de Robótica},		% title
+	pdfauthor={Ing. Alberto Lucas Chiesa Vaccaro},	% author
+	pdfsubject={Club de Robótica FIUBA},	% subject of the document
+	colorlinks=true,		% false: boxed links;
+	citecolor=black,		% color of links to bibliography
+	filecolor=black,		% color of file links
+	linkcolor=black,		% color of internal links
+	urlcolor=black			% color of external links
+}
+
 \usepackage{iwona}
 
 
@@ -17,7 +28,8 @@
 \include{caratula}
 
 \begin{abstract}
- Esto documento tiene como objetivo proponer un desafío de robótica a nivel nacional que tenga para incentivar a los grupos de investigación del país, públicos o privados a trabajar en las técnicas más modernas y avanzadas de la robótica móvil. Para ello este desafío tiene que ser gran de gran dificultad, pero al mismo, proponer una meta alcanzable en el mediano plazo por los equipos de trabajo actuales.
+ La robótica es una de las áreas de la tecnología más prometedoras actualmente. Los desarrollos actuales y la velocidad con la que se mejora el estado del arte de esta disciplina asegura que va a tener un rol preponderante en el desarrollo tecnológico de las naciones en los próximos años.
+ Esto documento tiene como objetivo proponer un desafío de robótica a nivel nacional que tenga para incentivar a los grupos de investigación del país, públicos o privados a trabajar en las técnicas más modernas y avanzadas de la robótica móvil. La dificultad de mismo debe superar la capacidad actual de la robótica en Argentina, pero estar dentro de lo realizable dentro de un año de trabajo intensivo. Este desafío debe ser organizado por algún organismo gubernamental, de forma tal de poder proveer los recursos y la difusión necesarios para garantizar su éxito.
 \end{abstract}
 
 \newpage
@@ -52,13 +64,13 @@ Resumiendo lo expuesto en la sección anterior, los objetivos principales de est
 
 \section{Antecedentes}
 
-Tanto en Europa como en Estados Unidos se organizan competencias avanzadas de robótica. Quizá las más conocidas fueron las propuestas por DARPA\cite{darpa}, conocidas como 2004 y 2005 \textit{Grand Challenge}, 2007 \textit{Urban Challenge}. En estas competencias el objetivo fue crear autos autónomos que sean capaces de completar recorridos en el desierto y en ambientes urbanos sin intervención humana. La misma agencia ya anunció el próximo desafío, que consiste en lograr que robots humanoides puedan resolver situaciones semejantes a las vividas en el accidente de Fukushima, japón.
+Tanto en Europa como en Estados Unidos se organizan competencias avanzadas de robótica. Quizá las más conocidas fueron las propuestas por DARPA\cite{darpa}, conocidas como 2004 y 2005 \textit{Grand Challenge}, 2007 \textit{Urban Challenge}. En estas competencias el objetivo fue crear vehículos autónomos que sean capaces de completar recorridos en el desierto y en ambientes urbanos sin intervención humana. La misma agencia ya anunció el próximo desafío, que consiste en lograr que robots humanoides puedan resolver situaciones semejantes a las vividas en el accidente de Fukushima, Japón.
 
 Los países europeos, por otro lado, tienen sus propias competencias ELROB\cite{elrob}, focalizadas en robots que puedan mapear terrenos desconocidos y usar esa información para encontrar objetos a rescatar o transportar carga. Estas competencias se realizan cada 2 años desde el 2007.
 
 En el 2010, Australia organizó junto con DARPA una competencia llamada \textit{Multi Autonomous Ground-robotic International Challenge}\cite{magic} donde un grupo de robots tenía un tiempo determinado para identificar y ``neutralizar'' un objetivo escondido en un terreno desértico.
 
-Los resultados de estas competencias ya son visibles. En el 2004 ningún participante pudo terminar el recorrido del DARPA Grand Challenge, pero desde entonces esta tecnología maduró considerablemente y ya está siendo aplicada por compañías como Google para hacer autos autónomos comerciales\cite{googlesdc}. DARPA también logró que una empresa privada desarrolle un robot humanoide con características excepciones para participar del nuevo desafío.\cite{petman}
+Los resultados de estas competencias ya son visibles. En el 2004 ningún participante pudo terminar el recorrido del DARPA Grand Challenge, pero desde entonces esta tecnología maduró considerablemente y ya está siendo aplicada por compañías como Google para hacer vehículos autónomos comerciales\cite{googlesdc}. DARPA también logró que una empresa privada desarrolle un robot humanoide con características excepcionales para participar del nuevo desafío.\cite{petman}
 
 \section{Competencia Propuesta}
 
@@ -71,32 +83,46 @@ Para la primer competencia nacional el desafío tiene que ser más acotado que l
 
 El rango de posibles competencias es muy amplio. La competencia debería ser tal que cada participante deba ubicarse y hacer mapas del ambiente en que se encuentra, reconozca objetos, planificar trayectorias y finalmente cumplir un objetivo dado. Este objetivo puede ser ubicar algún objeto oculto o simplemente llegar a algún destino cumpliendo todas las leyes de tránsito. Una competencia de estas características se puede realizar de muchas formas, y no sólo con vehículos terrestres, ya que podrían ser aéreos o hasta acuáticos\cite{auvsi}.
 
-De la experiencia propia del Club de Robótica\cite{club}, proponemos imitar el DARPA Grand Challenge, pero reduciendo el tamaño de los autos. En lugar de ser autos con motores a explosión, se propone el uso de vehículos eléctricos más pequeños como pueden ser carros de golf o los rodados a batería comunes para los más chicos. Al cambiar el este aspecto fundamental de la competencia se disminuye enormemente el costo y se disminuyen los riesgos asociados, sin necesariamente simplificar el diseño de los algoritmos de control e inteligencia artificial.
+De la experiencia propia del Club de Robótica\cite{club}, proponemos imitar el DARPA Grand Challenge, pero reduciendo el tamaño de los autos. En lugar de ser autos con motores a explosión, se propone el uso de vehículos eléctricos más pequeños como pueden ser carros de golf o los rodados a batería comunes para los más chicos. Al cambiar este aspecto fundamental de la competencia se disminuye enormemente el costo y los riesgos asociados, sin necesariamente simplificar el diseño de los algoritmos de control e inteligencia artificial.
+
+Sería desde ya interesante orientar la competencias a solucionar situaciones frecuentemente encontradas en nuestro país. Un ejemplo de esto podría ser alguna aplicación agrícola, como la cosecha de vid\cite{wall-ye}.
 
 En este tipo de competencias los vehículos deben, sin intervención humana recorrer un camino desconocido previamente pasando por lugares estipulados, evitando obstáculos y cumpliendo con objetivos secundarios que se pueden fijar para hacer más interesante el desafío.
 
 \section{Grupos que actualmente trabajan en robótica}
 \label{sec:grupos}
 
-Según sugirió Tom, estaría bueno listar los grupos que sabemos trabajan en estas cosas y podrían participar del desafío.
+\subsection{Universidades}
+
+A continuación se enumeran algunas universidades que están actualmente trabajando en robótica, con el fin de servir de primer contacto para la organización y difusión de este evento.
 
 \begin{itemize}
- \item UBA Exactas
- \item UBA Ingeniería \url{http://laboratorios.fi.uba.ar/laborob/robotica.htm}
- \item ITBA \url{http://www.itba.edu.ar/laboratorio-de-mecatronica}
- \item San Juan 
- \item Córdoba
- \item Universidad de Mendoza \url{http://www.um.edu.ar/web/index.php?option=com_content&view=article&id=1579}
+ \item Universidad de Buenos Aires, facultades de Ciencias Exactas y Naturales e Ingeniería.
+ \item Instituto Tecnológico Buenos Aires.
+ \item Universidad Nacional de San Juan.
+ \item Universidad Nacional de Córdoba.
+ \item Universidad de Mendoza.
 \end{itemize}
 
 \subsection{Clubes de robótica}
 
 La robótica tiene la particularidad de ser una disciplina muy llamativa para gente de diversas edades y orígenes. En particular se presta naturalmente para fomentar el interés en carreras técnicas, tan necesarias para el desarrollo del país. Por este motivo varias universidades organizan estos clubes, siendo el Club de Robótica de la Universidad de Buenos Aires una referencia en el área.
 
-Estos cubles pueden ser involucrados en la organización de la competencia nacional como voluntarios para las tareas que se deben realizar previamente y durante el evento. En particular el Club de Robótica FIUBA se compromete a participar activamente.
+Estos clubes pueden ser involucrados en la organización de la competencia nacional como voluntarios para las tareas que se deben realizar previamente y durante el evento. En particular el Club de Robótica FIUBA se compromete a participar activamente.
 
 Estas instituciones estudiantiles tienen como principal objetivo ser un lugar abierto a la participación de todos los interesados y para presentar el tema a interesados con poco trasfondo técnico. Como tal, sus proyectos no suelen aspiran a ser de una gran complejidad sino más bien divertidos y alcanzables por la mayoría. Esto tiene el efecto secundario de no poder ofrecer a la gente la posibilidad perseguir mayores intereses en robótica. Creemos que permitir a los clubes participar en la organización de este evento, puede lograr también que algunos junten suficiente momento para poder formar un laboratorio de robótica más avanzado y así darle continuidad a los participantes.
 
+\subsection{Colegios secundarios}
+
+Diversos colegios secundarios, técnicos o no, desarrollan talleres de robótica. Algunos de estos colegios son:
+
+\begin{itemize}
+ \item Escuela Raggio.
+ \item Escuela técnica ORT.
+ \item Colegio Lasalle.
+\end{itemize}
+
+Estas instituciones también deberían ser invitadas a participar de la competencia, de forma tal de fomentar aún más el interés de los alumnos en estos temas y ayudar a aumentar el compromiso de las escuelas con la robótica. La competencia hasta podría tener una categoría especial para participantes de colegios secundarios, con dificultad y premios acordes.
 
 \begin{thebibliography}{99}
 
@@ -150,6 +176,10 @@ RoboBoat \\
 
 \bibitem{club}
 A. L. Chiesa, E. M. Corbellini, T. A. González y A. Burman , ``A Robotics Club Experience as a complement to Engineering Education'', \textit{IEEE Latinamerican Transactions}, aceptado para publicación.
+
+\bibitem{wall-ye}
+Wall-Ye Robot Is In Your Vineyard, Prunin' Your Vines \\
+\url{http://spectrum.ieee.org/automaton/robotics/industrial-robots/wallye-robot-}
 
 \end{thebibliography}
 
