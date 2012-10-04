@@ -3,7 +3,7 @@
 \usepackage[utf8x]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage[pdftex]{graphicx}
-
+\usepackage[hyphens]{url}
 \usepackage[pdftex]{hyperref}
 \hypersetup{
 	pdftitle={Propuesta Desafío Nacional de Robótica},		% title
@@ -35,7 +35,7 @@
 \newpage
 \section{Motivación}
 
-Peter Norvig\cite{norvig-cv}, actual director de investigación para Google y autor del libro de referencia en inteligencia artificial \textit{Artificial Intelligence: A Modern Approach} en una entrevista sobre el futuro de la robótica comentó \cite{norvig-cita}:
+Peter Norvig\cite{norvig-cv}, actual director de investigación para Google y autor del libro de referencia en inteligencia artificial \textit{Artificial Intelligence: A Modern Approach} en una entrevista sobre el futuro de la robótica comentó\cite{norvig-cita}:
 
 \begin{quote}
 \textit{In terms of robotics we're probably where the world of PCs were in the early 1970s, where you could buy a PC kit and if you were an enthusiast you could have a lot of fun with that. Within a decade that changed, your grandmother needed word processing or email and we rapidly went from a very small number of hobbyists to pervasive technology throughout society in one or two decades. I expect a similar sort of timescale for robotic technology to take off, \textbf{starting roughly now}.}
@@ -45,11 +45,11 @@ La industria informática, si bien mantiene un gran volumen de ventas y cada vez
 
 Como tal, es de sumo interés para nuestro país no perder esta nueva oportunidad. Ahora es el momento de desarrollar conocimiento, tecnología y aplicaciones de la robótica para así ayudar a desarrollar este nuevo mercado, no sólo en el país sino en el mundo. Ayudar a crear este nuevo mercado significa la oportunidad única de posicionar al país al frente de estas nuevas tecnologías desde el comienzo.
  
-Actualmente existen diversos grupos de investigación de diferentes universidades dedicados a la robótica\ref{sec:grupos}, sin embargo la mayoría de estos grupos son relativamente recientes y el nivel de producción está muy lejos de otras áreas de investigación como pueden ser las ciencias médicas o la biología molecular.
+Actualmente existen diversos grupos de investigación de diferentes universidades dedicados a la robótica (ver \S\ref{sec:grupos}), sin embargo la mayoría de estos grupos son relativamente recientes y el nivel de producción está muy lejos de otras áreas de investigación como pueden ser las ciencias médicas o la biología molecular.
 
 Es por esto que se propone organizar un desafío nacional de robótica, cuya dificultad sea superior al estado del arte de la robótica en el país, y así fomentar el crecimiento de los actuales grupos de trabajo, como también la formación de nuevos grupos, especialmente en el ámbito privado, que actualmente permanece alejado de esta temática. Este desafío debe contar con premios acordes con la dificultad del mismo, y se deberían diseñar mecanismos de financiamiento para que los participantes puedan afrontar los costos de desarrollar un robot para esta competencia.
 
-Esta competencia serviría como puntapié de una campaña nacional de apoyo e incentivo a las actividades del sector.
+Un evento como este serviría como puntapié de una campaña nacional de apoyo e incentivo a las actividades del sector.
 
 \section{Objetivos}
 
@@ -81,7 +81,7 @@ Para la primer competencia nacional el desafío tiene que ser más acotado que l
  \item El tiempo destinado para la realización del proyecto no debería superar el año.
 \end{itemize}
 
-El rango de posibles competencias es muy amplio. La competencia debería ser tal que cada participante deba ubicarse y hacer mapas del ambiente en que se encuentra, reconozca objetos, planificar trayectorias y finalmente cumplir un objetivo dado. Este objetivo puede ser ubicar algún objeto oculto o simplemente llegar a algún destino cumpliendo todas las leyes de tránsito. Una competencia de estas características se puede realizar de muchas formas, y no sólo con vehículos terrestres, ya que podrían ser aéreos o hasta acuáticos\cite{auvsi}.
+El rango de posibles competencias es muy amplio. La competencia debería ser tal que cada participante deba ubicarse y hacer mapas del ambiente en que se encuentra, reconocer objetos, planificar trayectorias y finalmente cumplir un objetivo dado. Este objetivo puede ser ubicar algún objeto oculto o simplemente llegar a algún destino cumpliendo todas las leyes de tránsito. Una competencia de estas características se puede realizar de muchas formas, y no sólo con vehículos terrestres, ya que podrían ser aéreos o hasta acuáticos\cite{auvsi}.
 
 De la experiencia propia del Club de Robótica\cite{club}, proponemos imitar el DARPA Grand Challenge, pero reduciendo el tamaño de los autos. En lugar de ser autos con motores a explosión, se propone el uso de vehículos eléctricos más pequeños como pueden ser carros de golf o los rodados a batería comunes para los más chicos. Al cambiar este aspecto fundamental de la competencia se disminuye enormemente el costo y los riesgos asociados, sin necesariamente simplificar el diseño de los algoritmos de control e inteligencia artificial.
 
@@ -99,6 +99,7 @@ A continuación se enumeran algunas universidades que están actualmente trabaja
 \begin{itemize}
  \item Universidad de Buenos Aires, facultades de Ciencias Exactas y Naturales e Ingeniería.
  \item Instituto Tecnológico Buenos Aires.
+ \item Universidad Abierta Interamericana.
  \item Universidad Nacional de San Juan.
  \item Universidad Nacional de Córdoba.
  \item Universidad de Mendoza.
@@ -110,7 +111,7 @@ La robótica tiene la particularidad de ser una disciplina muy llamativa para ge
 
 Estos clubes pueden ser involucrados en la organización de la competencia nacional como voluntarios para las tareas que se deben realizar previamente y durante el evento. En particular el Club de Robótica FIUBA se compromete a participar activamente.
 
-Estas instituciones estudiantiles tienen como principal objetivo ser un lugar abierto a la participación de todos los interesados y para presentar el tema a interesados con poco trasfondo técnico. Como tal, sus proyectos no suelen aspiran a ser de una gran complejidad sino más bien divertidos y alcanzables por la mayoría. Esto tiene el efecto secundario de no poder ofrecer a la gente la posibilidad perseguir mayores intereses en robótica. Creemos que permitir a los clubes participar en la organización de este evento, puede lograr también que algunos junten suficiente momento para poder formar un laboratorio de robótica más avanzado y así darle continuidad a los participantes.
+Estas instituciones estudiantiles tienen como principal objetivo ser un lugar abierto a la participación de todos los interesados y para presentar el tema a interesados con poco trasfondo técnico. Como tal, sus proyectos no suelen aspirar a ser de una gran complejidad sino más bien divertidos y alcanzables por la mayoría. Esto tiene el efecto secundario de no poder ofrecer a la gente la posibilidad perseguir mayores intereses en robótica. Creemos que permitir a los clubes participar en la organización de este evento, puede lograr también que algunos junten suficiente momento para poder formar un laboratorio de robótica más avanzado y así darle continuidad a los participantes.
 
 \subsection{Colegios secundarios}
 
