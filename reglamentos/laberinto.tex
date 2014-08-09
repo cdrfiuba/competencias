@@ -33,9 +33,9 @@
 \fancypagestyle{plain}{%
 \fancyhead{} % get rid of headers
 \renewcommand{\headrulewidth}{1pt} % and the line
-\lhead{\includegraphics[height=2cm]{logoclub.png}}
+\lhead{\includegraphics[height=2cm]{logoclub}}
 %\chead{}
-\rhead{\includegraphics[height=2cm]{logofiuba.jpg}}
+\rhead{\includegraphics[height=2cm]{logofiuba}}
 \lfoot{ www.clubderobotica.com.ar}
 \cfoot{}
 \rfoot{ \thepage \ de \pageref{LastPage}}
@@ -60,6 +60,18 @@
   \setlength{\parsep}{0pt}
 }
 
+\usepackage{transparent}
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{
+  \put(0,0){
+    \parbox[b][\paperheight]{\paperwidth}{%
+      \vfill
+      \centering
+      {\transparent{0.05}\includegraphics[width=0.9\paperwidth]{logoclub}}
+      \vfill
+    }
+  }
+}
 
 \newcommand{\cm}{\ensuremath{\mbox{~cm}}}
 
@@ -70,6 +82,7 @@
 
 \begin{document}
 
+\AddToShipoutPicture{\BackgroundPic}
 
 \begin{center}
   {\Huge \textbf{Club de Robótica FIUBA}}
