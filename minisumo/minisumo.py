@@ -142,6 +142,8 @@ class World(object):
         self.auto2 = str(cars.cars[0])
         self.auto2_puntaje = 0
         self.asalto_num = 0
+        
+        self.tamanio_fuentes = {};
 
     def load_image(self, name):
         fullname = os.path.join('.', name)
@@ -163,13 +165,17 @@ class World(object):
             self.back.fill((0, 255, 250)) #No se que es
             self.crono.update()
 
+        self.update_text()
+        self.imprimir_texto_ayuda()
+        
+    def update_text(self):
         banner, banner_rect = self.load_image("logo-club-banner_596x600.png")
         self.back.blit(banner, (102,0))
         asalto = self.font.render("Asalto", 1, (200, 10, 10))
         asalto_num = self.font.render(str(self.asalto_num), 1, (200, 10, 10))
-        auto1 = self.font.render(self.auto1, 1, (10, 10, 10))
+        auto1 = self.get_font_size(self.auto1, 400).render(self.auto1, 1, (10, 10, 10))
         auto1_puntaje = self.font.render(str(self.auto1_puntaje), 1, (10, 10, 10))
-        auto2 = self.font.render(self.auto2, 1, (10, 10, 10))
+        auto2 = self.get_font_size(self.auto2, 400).render(self.auto2, 1, (10, 10, 10))
         auto2_puntaje = self.font.render(str(self.auto2_puntaje), 1, (10, 10, 10))
         self.back.blit(asalto, asalto.get_rect(centerx=width/2, centery=int(height*.5/6.0)))
         self.back.blit(asalto_num, asalto_num.get_rect(centerx=width/2, centery=int(height*1.5/6.0)))
@@ -178,7 +184,22 @@ class World(object):
         self.back.blit(auto2, auto2.get_rect(centerx=3.0*width/4, centery=int(height*2.5/6.0)))
         self.back.blit(auto2_puntaje, auto2_puntaje.get_rect(centerx=3.0*width/4, centery=int(height*3.5/6.0)))
 
-        # Imprimo el texto de ayuda
+    def get_font_size(self, texto, maximo_tamanio):
+        if (texto in self.tamanio_fuentes): return self.tamanio_fuentes[texto]
+		
+        tamanio = 85
+		
+        new_font = pygame.font.SysFont("Monospace", tamanio, bold=True)
+        surface = new_font.render(texto, 1, (10, 10, 10))
+        while (surface.get_width() > maximo_tamanio):
+            tamanio = tamanio - 1
+            new_font = pygame.font.SysFont("Monospace", tamanio, bold=True)
+            surface = new_font.render(texto, 1, (10, 10, 10))
+            
+        self.tamanio_fuentes[texto] = new_font
+        return self.tamanio_fuentes[texto]
+    
+    def imprimir_texto_ayuda(self):
         ayuda = self.font_chica.render(self.ayuda[0:self.ayuda.find('|')], 1, (100,100,100))
         self.back.blit(ayuda, ayuda.get_rect(centerx=width/2, centery=int(height*5.7/6.0)))
         ayuda = self.font_chica.render(self.ayuda[self.ayuda.find('|')+1:], 1, (100,100,100))
@@ -189,7 +210,16 @@ class Game():
     
     def change_car (self, indice):
         indice = (indice + 1)%len(cars.cars)
-        auto = str(cars.cars[indice][0:9])
+        
+        cadena = str(cars.cars[indice])
+        # Busco el proximo espacio desde el caracter 9
+        ultimo_caracter = cadena.find(' ', 7)
+
+        if (ultimo_caracter > 15): ultimo_caracter = 10;
+        elif (ultimo_caracter == -1 and len(cadena) > 15): ultimo_caracter = 10;
+        elif (ultimo_caracter == -1): ultimo_caracter = len(cadena);
+        
+        auto = str(cars.cars[indice][0:ultimo_caracter])
         return indice, auto
 
     def get_world (self):
@@ -223,11 +253,11 @@ class Game():
                     sys.exit()
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_1:
-                             indice_auto1, world.auto1 = self.change_car(indice_auto1)
-                             world.render()
+                        indice_auto1, world.auto1 = self.change_car(indice_auto1)
+                        world.render()
                     elif event.key == pygame.K_2:
-                             indice_auto2, world.auto2 = self.change_car(indice_auto2)
-                             world.render()
+                        indice_auto2, world.auto2 = self.change_car(indice_auto2)
+                        world.render()
                     elif event.key ==  pygame.K_l:
                         cronometro.stop()
                         cronometro.stop() # Si, tienen que ser dos.
