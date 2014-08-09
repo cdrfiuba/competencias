@@ -140,7 +140,7 @@ El objetivo de la competición es diseñar y construir un robot que logre empuja
   \item La señal de activación será un flanco positivo en la línea GPIO. También podrá identificarse por la presencia de un nivel alto (``1 lógico'').
   \item La línea GPIO estará conectada a VCC a través de un resistor pull-up de 10 kohm y a GND a través de un transistor que actúa como llave (ver imagen). Cuando el transistor esté en modo saturación (llave cerrada) la línea GPIO presentará un ``0 lógico''.
   \begin{center}
-    \includegraphics[width=0.3\textwidth]{signalstarter_sch.png}
+    \includegraphics[width=0.3\textwidth]{signalstarter_sch}
   \end{center}
   \item Cuando el uC envíe la señal de activación, el transistor pasara al estado de corte (llave abierta) logrando de esta manera que la línea GPIO presente un ``1 lógico''.
   \item El nivel de tensión correspondiente al ``1 lógico'' depende de la tensión de alimentación provista por el robot en la línea VCC. Se sugiere conectar la línea GPIO a una entrada del micro tri-state, sin pull-up interno, de forma tal de no degradar la señal.
@@ -148,7 +148,7 @@ El objetivo de la competición es diseñar y construir un robot que logre empuja
   \item Se asegura que el la diferencia de tiempos máxima, de recepción de la señal por cada módulo será de 10 ms, caso contrario se reinicia el asalto.
   \item El tamaño según las indicaciones en la imagen son A: $25\mm$ - B: $53\mm$ - C: $33\mm$.
   \begin{center}
-    \includegraphics[width=0.3\textwidth]{signal_starter_img}
+    \includegraphics[width=0.3\textwidth]{signalstarter_img}
   \end{center}
   \item El peso es menor a $50\gramos$
   \item El peso del módulo no forma parte del peso del robot, es decir, el peso se verifica sin el módulo instalado.
