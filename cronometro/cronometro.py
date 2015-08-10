@@ -41,7 +41,8 @@ import cars
 print cars.cars
 
 BARRERA_CONECTADA = False;
-SERIAL_PORT = "/dev/ttyACM0" # "/dev/ttyACM0" o "COM3"
+SERIAL_PORT ="/dev/ttyUSB0"# "/dev/ttyACM0" o "COM3"
+BAUDRATE = 9600
 
 pygame.init()
 pygame.font.init()
@@ -56,7 +57,6 @@ ck = pygame.time.Clock()
 background = pygame.Surface(screen.get_size())
 background = background.convert()
 
-
 def load_image(name):
     fullname = os.path.join('.', name)
     image = pygame.image.load(fullname)
@@ -64,8 +64,8 @@ def load_image(name):
     return image, image.get_rect()
 
 class SerialIO(object):
-    def __init__(self, port="COM3", timeout=0):
-        self.ser = serial.Serial(port=port, timeout=timeout)
+    def __init__(self, port="COM3", baudrate='9600',timeout=0):
+        self.ser = serial.Serial(port=port, baudrate=baudrate, timeout=timeout)
     def try_read_byte(self):
         rcv = self.ser.read(1)
         return rcv
@@ -112,7 +112,7 @@ class Cronometro(object):
             self.text = self.font.render(elapsed_txt, 1, (10, 10, 10))
         self.textpos = self.text.get_rect(centerx=width/2, centery=height/2)
         background.blit(self.text, self.textpos)
-
+	
 def clockformat(timedelta):
     return "%02d:%02d.%03d" % (timedelta.seconds /60,
                                timedelta.seconds % 60, 
@@ -237,7 +237,7 @@ leer_carreras(carreras, archivo)
 banner, banner_rect = load_image("logo-club-banner.png")
 world = World()
 cronometro = Cronometro()
-if (BARRERA_CONECTADA): serial_io = SerialIO(port=SERIAL_PORT, timeout=0)
+if (BARRERA_CONECTADA): serial_io = SerialIO(port=SERIAL_PORT, BAUDRATE, timeout=0)
 
 import time,subprocess
 time.sleep(1)
