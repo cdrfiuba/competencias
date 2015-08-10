@@ -237,7 +237,7 @@ leer_carreras(carreras, archivo)
 banner, banner_rect = load_image("logo-club-banner.png")
 world = World()
 cronometro = Cronometro()
-if (BARRERA_CONECTADA): serial_io = SerialIO(port=SERIAL_PORT, BAUDRATE, timeout=0)
+if (BARRERA_CONECTADA): serial_io = SerialIO(port=SERIAL_PORT, baudrate=BAUDRATE, timeout=0)
 
 import time,subprocess
 time.sleep(1)
