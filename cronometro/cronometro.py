@@ -40,8 +40,8 @@ import cars
 
 print cars.cars
 
-BARRERA_CONECTADA = False;
-SERIAL_PORT ="/dev/ttyUSB0"# "/dev/ttyACM0" o "COM3"
+BARRERA_CONECTADA = True;
+SERIAL_PORT ="/dev/ttyUSB2"# "/dev/ttyACM0" o "COM3"
 BAUDRATE = 9600
 
 pygame.init()
