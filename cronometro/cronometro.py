@@ -1,6 +1,7 @@
 """
 cronometro.py A simple cronometer made with pygame
 Copyright (C) 2010  Santiago Piccinini
+Modificaciones realizadas por Patricio Tula
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
