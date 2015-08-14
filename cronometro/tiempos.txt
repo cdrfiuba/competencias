@@ -1,13 +1,4 @@
 ==========
-Tuesday, 11. August 2015 08:10PM
-1 --- Dualito, 00:00.000
-2 --- Dualito, 00:00.000
-3 --- Dualito, 00:00.000
-4 --- Dualito, 00:00.000
-5 --- Dualito, 00:00.000
-6 --- Dualito, 00:00.000
-7 --- Dualito, 00:00.000
-8 --- Dualito, 00:00.000
-9 --- Osvaldito, 00:04.482
-10 --- Dualito, 00:05.564
-11 --- Tractor, 00:10.377
+Friday, 14. August 2015 05:06PM
+1 --- Osvaldito, 00:03.932
+2 --- Osvaldito, 00:05.227
